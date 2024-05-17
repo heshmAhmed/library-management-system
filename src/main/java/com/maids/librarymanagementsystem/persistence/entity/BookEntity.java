@@ -24,6 +24,6 @@ public class BookEntity {
     private String isbn;
 
     @OneToMany(mappedBy = "book", cascade = CascadeType.REMOVE, orphanRemoval = true)
-    private List<BorrowingRecordEntity> patronEntities = new ArrayList<>();
+    private List<BorrowingRecordEntity> bookEntities = new ArrayList<>();
 
 }
