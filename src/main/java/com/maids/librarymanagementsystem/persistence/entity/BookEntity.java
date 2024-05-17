@@ -3,6 +3,8 @@ package com.maids.librarymanagementsystem.persistence.entity;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 
@@ -20,5 +22,8 @@ public class BookEntity {
     private int publicationYear;
 
     private String isbn;
+
+    @OneToMany(mappedBy = "book", cascade = CascadeType.REMOVE, orphanRemoval = true)
+    private List<BorrowingRecordEntity> patronEntities = new ArrayList<>();
 
 }
